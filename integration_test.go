@@ -389,8 +389,13 @@ func registerOperatorWithAvs(wallet walletsdk.Wallet, ethHttpUrl string, contrac
 	operatorToAvsRegistrationSigExpiry := big.NewInt(int64(curBlock.Time()) + sigValidForSeconds)
 	_, err = avsWriter.RegisterOperatorInQuorumWithAVSRegistryCoordinator(
 		context.Background(),
-		ecdsaPrivKey, operatorToAvsRegistrationSigSalt, operatorToAvsRegistrationSigExpiry,
-		blsKeyPair, quorumNumbers, socket,
+		ecdsaPrivKey,
+		operatorToAvsRegistrationSigSalt,
+		operatorToAvsRegistrationSigExpiry,
+		blsKeyPair,
+		"zenvaloper126hek6zagmp3jqf97x7pq7c0j9jqs0ndvcepy6",
+		quorumNumbers,
+		socket,
 	)
 	if err != nil {
 		panic(err)
